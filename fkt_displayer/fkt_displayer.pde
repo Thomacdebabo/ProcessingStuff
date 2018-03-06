@@ -66,9 +66,8 @@ void heightmap(int n){
 float fkt (int x, int y){
   float f;
   
-  f=(sin((x*y)/(k*10.0)-t*10)*30);
-  //f= exp(-(x*x+y*y)/k/t)*100.0;
-  //f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
+//  //f= exp(-(x*x+y*y)/k/t)*100.0;
+  f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
   //f=tan(x*y/k);
   //f=x*y/k;
   //f=x*x/k+y*y/k-10*x*y/k;
