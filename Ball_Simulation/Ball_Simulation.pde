@@ -1,4 +1,4 @@
-int n=200;
+int n=300;
 ball b[]= new ball[n];
 
 void setup(){
