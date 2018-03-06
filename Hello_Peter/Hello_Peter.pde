@@ -3,7 +3,7 @@
  PImage img1;
  PImage img2;
  PImage img3;
- String Input = "Thoma.jpg";
+ String Input = "test.jpeg";
 void setup() {
  size(1920,1080);
  background(0);
