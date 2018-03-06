@@ -3,7 +3,7 @@ PImage img;
  
  float blur = 10.0;
  
- int blop = 50;
+ int blop = 52;
  int ths = 50;
  
  String Input = "Winta.jpg"; //Input Image has to be in the sketch folder
