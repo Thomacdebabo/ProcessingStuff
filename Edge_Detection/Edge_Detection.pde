@@ -6,16 +6,13 @@ PImage img;
  int blop = 50;
  int ths = 50;
  
- String Input = "Winta.jpg"; //Input Image has to be in the sketch folder
+ String Input = "test.jpeg"; //Input Image has to be in the sketch folder
  
 void setup() {
- size(600 ,800);
+ size(1280 ,960);
  background(0);
  
-img = loadImage(Input);
-
-
-
+ img = loadImage(Input);
 }
 
 
