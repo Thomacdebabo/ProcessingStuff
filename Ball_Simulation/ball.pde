@@ -9,12 +9,16 @@ class ball{
   int size =10;
   float a =9.81;
   float dt = 0.1;
+  float Fr= 0.5;
+  
+
   
   ball(float x0,float y0,float vx0,float vy0){
     x=x0;
     y=y0;
     vx=vx0;
     vy=vy0;
+
   }
  
   void update(){
@@ -29,16 +33,23 @@ class ball{
 
        
     }
-    void drawball(){
+    void drawball(int max){
      noStroke();
-     fill(vx*2.55,vy*2.55,sqrt(vx*vx+vy*vy)*2.55);
+     fill(170-sqrt(vx*vx+vy*vy)/max/1.41*170,255,255);
+     ellipse(x,y,2*size,2*size); 
+      
+    }
+    
+     void drawball(){
+     noStroke();
+     fill(0,255,255);
      ellipse(x,y,2*size,2*size); 
       
     }
     void collision(){
     if(x>=width-size){
       vx=-vx/imp;
-      x=width-size-1;
+      x=width-size;
    
      }else if(x<=size){
        vx=-vx/imp;
@@ -47,12 +58,22 @@ class ball{
      
     if(y>=height-size){
       vy=-vy/imp;
+      friction();
+      
       y=height-size-1;
     }else if(y<=size){
        vy=-vy/imp;
        y=size+1;
      } 
       
+    }
+    void friction(){
+            if(vx<0){
+        vx+=Fr;
+      }
+      if(vx>0){
+        vx-=Fr;
+      }
     }
   }
  
