@@ -5,13 +5,12 @@ ball3d b[]= new ball3d[n];
 
 void setup(){
    size (1600,1000,P3D);
- background(125);
- textSize(20);
- colorMode (RGB);
-  for(int i=0; i<n; i++){
-
-  b[i]= new ball3d(1000,0,1000,random(initialV),random(initialV),-random(initialV));
-  b[i].size=10+ (int)random(20);
+   background(125);
+   colorMode (RGB);
+   
+   for(int i=0; i<n; i++){
+     b[i] = new ball3d(1000,0,1000,random(initialV),random(initialV),-random(initialV));
+     b[i].size = 10 + (int)random(20);
   
  }
 
@@ -20,16 +19,11 @@ void setup(){
 void draw(){
   
   Environment();
-  
 
   for(int i=0; i<n; i++){
-
     b[i].drawball();
     b[i].update();
-
-  }
-
-  
+  } 
 }
 
 void Environment(){
@@ -48,14 +42,13 @@ void Environment(){
   
 }
 void mouseClicked(){
+  
   int rx=(int)random(1000);
   int ry=(int)random(1000);
   int rz=(int)random(1000);
+  
   for(int i=0; i<n; i++){
-
-  b[i]= new ball3d(rx,ry,rz,random(2*initialV)-initialV,random(2*initialV)-initialV,random(2*initialV)-initialV);
-  b[i].size=10+ (int)random(20);
-  
+    b[i] = new ball3d(rx,ry,rz,random(2*initialV)-initialV,random(2*initialV)-initialV,random(2*initialV)-initialV);
+    b[i].size = 10 + (int)random(20);
  }
-  
 }
