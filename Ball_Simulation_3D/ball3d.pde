@@ -2,24 +2,25 @@ class ball3d{
   float x;
   float y;
   float z;
+  
   float dx=0;
   float dy=0;
   float dz=0;
+  
   float vy;
   float vx;
   float vz;
-  float imp=1.05;
-  int size =10;
-  float a =2*9.81;
-  float dt = 0.105;
-  float Fr= 0.5;
   
   int boundaryX=1000;
   int boundaryY=1000;
   int boundaryZ=1000;
   
+  float imp=1.05;
+  int size =10;
+  float a =2*9.81;
+  float dt = 0.105;
+  float Fr= 1.05;
 
-  
   ball3d(float x0,float y0, float z0, float vx0,float vy0, float vz0){
     x=x0;
     y=y0;
@@ -48,7 +49,11 @@ class ball3d{
     
      void drawball(){
      noStroke();
-     fill(255);
+     fill(x/boundaryX*255,y/boundaryY*255,z/boundaryZ*255);
+     
+     if(dt==0){
+      fill(0,0,0); 
+     }
      translate(x,z,y);
      sphere(size); 
      translate(-x,-z,-y);
@@ -57,6 +62,7 @@ class ball3d{
     void drawshadow(){
      rotateX(PI/2);
      fill(0,0,0,(boundaryZ-z)/boundaryZ*255);
+   
      
      translate(0,0,-1);
      ellipse(x,y,2*size,2*size);
@@ -96,7 +102,26 @@ class ball3d{
       
     }
     void friction(){
-      if(vx<0){
+      if(vx*vx>=0.1){
+        vx/=Fr;
+      } else{
+       vx=0;
+       dx=0; 
+      }
+      
+     if(vy*vy>=0.5){
+        vy/=Fr;
+      } else{
+       vy=0;
+       dy=0; 
+      }
+      if(vx==0&&vy==0){
+       vz=0;
+       dz=0; 
+       dt=0;
+      }
+      
+     /* if(vx<0){
         vx+=Fr;
       }
       if(vx>0){
@@ -108,6 +133,7 @@ class ball3d{
       if(vy>0){
         vy-=Fr;
       }
+      */
     }
   }
  
