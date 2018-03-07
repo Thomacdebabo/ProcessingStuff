@@ -1,11 +1,11 @@
-int n=300;
+int n=500;
 
 int initialV = 100;
 
 ball b[]= new ball[n];
 
 void setup(){
- size (1200,800);
+ size (1600,1000);
  background(125);
  textSize(20);
  colorMode (HSB);
