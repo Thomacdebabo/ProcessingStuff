@@ -21,7 +21,6 @@ void setup(){
 void draw(){
   
   Environment();
-
   
 
   for(int i=0; i<n; i++){

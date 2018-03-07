@@ -60,8 +60,10 @@ class ball3d{
      
      translate(0,0,-1);
      ellipse(x,y,2*size,2*size);
-     rotateX(-PI/2); 
+      
      translate(0,0,+1);
+     rotateX(-PI/2);
+     
       
     }
     void collision(){
