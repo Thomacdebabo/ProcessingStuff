@@ -6,7 +6,7 @@ int speed =1000;
 float xn=0;
 float yn=0;
 void setup(){
- size(800,1200);
+ size(800,600);
  background(255);
  colorMode(HSB);
  strokeWeight(2);
@@ -20,8 +20,8 @@ void draw(){
   for(int i=0; i<speed; i++){
   stroke(t*100%255,255,255,50);
   
-  xn=x+sin(x*PI/width)*PI/2.0;
-  yn=y+cos(y*PI/width)*PI/2.0;
+  xn=x+sin(x*PI/width)*PI/2.0-cos(x*PI/width)*PI/2.0;
+  yn=y+cos(y*PI/width)*PI/2.0-sin(y*PI/width)*PI/2.0;
   
   line(x,y,xn,yn);
   
