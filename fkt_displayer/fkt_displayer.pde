@@ -2,6 +2,7 @@
 float t=0;
 int a=2;
 float k=100;
+float speed = 30;
 
 void setup(){
  size(800,600,P3D);
@@ -49,7 +50,7 @@ void heightmap(int n){
  for(int x=-n; x<n; x++){
     for(int y=-n; y<n; y++){
       noStroke();
-     fill(255*(t%1),255,255);
+     fill(255*((fkt(x,y)+k*a)/(k*a*2)),255,255);
       vertex(x*a,y*a,fkt(x,y));
       vertex((x+1)*a,y*a,fkt(x+1,y));
       vertex(x*a,(y+1)*a,fkt(x,y+1));
@@ -66,10 +67,11 @@ void heightmap(int n){
 float fkt (int x, int y){
   float f;
   
-//  //f= exp(-(x*x+y*y)/k/t)*100.0;
-  f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
+  //f= exp(-(x*x+y*y)/k/t)*100.0;
+  //f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
   //f=tan(x*y/k);
   //f=x*y/k;
   //f=x*x/k+y*y/k-10*x*y/k;
+  f=sin(x/100.0+t*speed)*200*sin(y/10.0+t*speed)*exp((-x*x-y*y)/300.0);
   return f;
 }
