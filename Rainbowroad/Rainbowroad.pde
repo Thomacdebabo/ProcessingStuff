@@ -1,6 +1,8 @@
 float t = 0;
-int intervall=50;
-int thiccness=5;
+int intervall=10;
+int thiccness=1;
+float limx=20;
+float limy =1;
 
 void setup(){
  size(1920,1080);
@@ -11,8 +13,8 @@ void setup(){
 }
 
 void draw(){
-  for( int x=10; x<width; x+=intervall){
-    for( int y=10; y<height; y+=intervall){
+  for( int x=0; x<width/limx; x+=intervall){
+    for( int y=0; y<height/limy; y+=intervall){
        drawline(x,y);
        println(x+"/"+y);
     }

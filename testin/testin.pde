@@ -6,10 +6,10 @@ int speed =1000;
 float xn=0;
 float yn=0;
 void setup(){
- size(800,600);
+ size(1920,1080);
  background(255);
  colorMode(HSB);
- strokeWeight(2);
+ strokeWeight(4);
  frameRate(120);
   
   x=321;
@@ -40,4 +40,8 @@ void draw(){
     }
   }
   
+}
+
+void mouseClicked(){
+  saveFrame("Rainbo.jpg");
 }
