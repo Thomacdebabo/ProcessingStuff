@@ -1,11 +1,12 @@
 float t = 0;
 int intervall=10;
-int thiccness=1;
-float limx=20;
+int thiccness=2;
+float limx=1;
 float limy =1;
-
+int vis = 255;
+float dt = 0.01;
 void setup(){
- size(1920,1080);
+ size(1920,1080,P2D);
  background(255);
  colorMode(HSB);
  strokeWeight(thiccness);
@@ -19,7 +20,8 @@ void draw(){
        println(x+"/"+y);
     }
   }
-  saveFrame("Rainbowroad.jpg");
+  
+  println("-----------------------------Done-----------------------------");
   noLoop();
 }
 
@@ -34,18 +36,22 @@ void drawline(float i, float j){
   color c;
 
   while(bo){
-  stroke(t*100%255,255,255);
+  stroke(t*100%255,255,255,vis);
   
-  xn=x+sin(x*PI/width)*3*PI;
-  yn=y+cos(y*PI/height)*PI;
-   //c=get((int)xn,(int)yn);
+  xn = x - 10*sin(exp(y/width*PI))*x*0.0001*3;
+  yn = y - 10*cos(exp(x/height*PI))*y*0.0001;
+  
+  //xn=x+sin(x*PI/width)*PI;
+  //yn=y+cos(y*PI/height)*3*PI;
+  
+  //c=get((int)xn,(int)yn);
   //if(red(c)!=255)bo=false;
 
   line(x,y,xn,yn);
   
  // println(x+"/"+y);
   
-  t+=0.01;
+  t+=dt;
   
   
   if(sqrt(x*x-xn*xn)<=0.1&&sqrt(y*y-yn*yn)<=0.1)bo=false;
@@ -54,4 +60,11 @@ void drawline(float i, float j){
   y=yn%height;
 
   }
+}
+
+void keyPressed(){
+  String out = "Rainbowroad";
+ out += key;
+ out += ".png";
+  saveFrame(out);
 }

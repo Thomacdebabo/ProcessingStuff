@@ -68,10 +68,10 @@ float fkt (int x, int y){
   float f;
   
   //f= exp(-(x*x+y*y)/k/t)*100.0;
-  //f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
+  f=100.0*(cos(2*x/k-10*t)+sin(2*y/k-10*t));
   //f=tan(x*y/k);
   //f=x*y/k;
   //f=x*x/k+y*y/k-10*x*y/k;
-  f=sin(x/100.0+t*speed)*200*sin(y/10.0+t*speed)*exp((-x*x-y*y)/300.0);
+  //f=sin(x/100.0+t*speed)*200*sin(y/10.0+t*speed)*exp((-x*x-y*y)/300.0);
   return f;
 }
