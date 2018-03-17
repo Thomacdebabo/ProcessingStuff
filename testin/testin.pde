@@ -11,7 +11,7 @@ int thiccness = 2;
 float xn=0;
 float yn=0;
 void setup(){
- size(1920,1080,FX2D);
+ size(1920,1080,P2D);
  background(255);
  colorMode(HSB);
  strokeWeight(thiccness);
@@ -25,8 +25,14 @@ void draw(){
   for(int i=0; i<speed; i++){
   stroke(t*100%255,255,255,vis);
   
-  xn = x - f*sin(exp(y/width*PI))*x*dt*3;
-  yn = y - f*cos(exp(x/height*PI))*y*dt;
+  xn = x - 10*exp(-sin(y/height*PI)*exp(sin(y/height*PI)))*y*0.0001*3;
+  yn = y + 10*exp(-sin(x/width*PI)*exp(cos(y/height*PI)))*x*0.0001;
+  
+  //xn = x - f*sin(exp(y/height*PI))*x*dt*3;
+  //yn = y - f*cos(exp(x/width*PI+y/height*PI))*y*dt;
+  
+  //xn = x - f*sin(exp(y/height*PI))*x*dt*3;
+  //yn = y - f*cos(exp(x/width*PI))*y*dt;
   
   //xn = x - f*sin(exp(y/width*PI))*x*dt*3;
   //yn = y - f*cos(x/height*PI)*y*dt;
@@ -62,7 +68,7 @@ void draw(){
   
   t+=0.01;
   
-  if(sqrt(x*x-xn*xn)<=0.1&&sqrt(y*y-yn*yn)<=0.1){
+  if(sqrt(x*x-xn*xn)<=0.1&&sqrt(y*y-yn*yn)<=0.1||t>100){
    x = random(width);
    y = random(height);
    t=0;
