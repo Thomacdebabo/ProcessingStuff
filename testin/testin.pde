@@ -2,16 +2,16 @@ float t = 0;
 float x;
 float y;
 int speed =1000;
-int vis = 200;
+int vis = 255;
 float f = 10;
-float dt = 0.0001;
+float dt = 0.01;
 
 int thiccness = 2;
 
 float xn=0;
 float yn=0;
 void setup(){
- size(1920,1080,P2D);
+ size(1920,1080);
  background(255);
  colorMode(HSB);
  strokeWeight(thiccness);
@@ -24,9 +24,18 @@ void setup(){
 void draw(){
   for(int i=0; i<speed; i++){
   stroke(t*100%255,255,255,vis);
+  xn = x*(1-sin(y+dt)*dt);
+  yn = y*(1+cos(x+dt)*dt);
   
-  xn = x - 10*exp(-sin(y/height*PI)*exp(sin(y/height*PI)))*y*0.0001*3;
-  yn = y + 10*exp(-sin(x/width*PI)*exp(cos(y/height*PI)))*x*0.0001;
+  
+  //xn = x + exp(-PI*sin((y-height/2)/height*PI));
+  //yn = y - exp(PI*cos((x-width/2)/width*PI));
+  
+  //xn= x +y*dt;
+  //yn= y-x*dt;
+  
+  //xn = x - 10*exp(-sin(y/height*PI)*exp(sin(y/height*PI)))*y*0.0001*3;
+  //yn = y + 10*exp(-sin(x/width*PI)*exp(cos(y/height*PI)))*x*0.0001;
   
   //xn = x - f*sin(exp(y/height*PI))*x*dt*3;
   //yn = y - f*cos(exp(x/width*PI+y/height*PI))*y*dt;
