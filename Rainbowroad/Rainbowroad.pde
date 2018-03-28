@@ -47,9 +47,11 @@ void drawline(float i, float j){
 
   while(bo){
   stroke(t*100%255,255,255,vis);
+  xn = x+exp(sin(x/y));
+  yn = y+exp(sin(y/x));
   
-  xn = x*(1+sin((y+dt)/height*PI)*dt);
-  yn = y*(1-cos((x+dt)/width*PI)*dt);
+  //xn = x*(1+sin((y+dt)/height*PI)*dt);
+  //yn = y*(1-cos((x+dt)/width*PI)*dt);
   
   //xn= x +y*dt;
   //yn= y-x*dt;

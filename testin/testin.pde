@@ -24,8 +24,11 @@ void setup(){
 void draw(){
   for(int i=0; i<speed; i++){
   stroke(t*100%255,255,255,vis);
-  xn = x*(1-sin(y+dt)*dt);
-  yn = y*(1+cos(x+dt)*dt);
+  xn = x+exp(sin(x/y));
+  yn = y+exp(sin(y/x));
+  
+  //xn = x*(1-sin(y+dt)*dt);
+  //yn = y*(1+cos(x+dt)*dt);
   
   
   //xn = x + exp(-PI*sin((y-height/2)/height*PI));
