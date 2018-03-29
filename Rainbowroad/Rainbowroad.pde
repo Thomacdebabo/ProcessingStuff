@@ -22,6 +22,7 @@ void draw(){
     }
   }
   */
+
   for(int i=0; i<width; i++){
     drawline(i,height);
     drawline(i,0);
@@ -30,7 +31,6 @@ void draw(){
     drawline(width,j);
     drawline(0,j);
   }
-  
   println("-----------------------------Done-----------------------------");
   noLoop();
 }
