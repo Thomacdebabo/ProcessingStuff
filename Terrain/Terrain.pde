@@ -60,6 +60,7 @@ float [][] makeplane(int n){
       for(int y=0; y<2*n; y++){
 
           a[x][y]= noise(x/10.0,y/10.0-t)*300;
+          
       }
     }
    return a;  

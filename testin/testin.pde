@@ -4,7 +4,7 @@ float y;
 int speed =1000;
 int vis = 255;
 float f = 10;
-float dt = 0.01;
+float dt = 0.001;
 
 int thiccness = 2;
 
@@ -23,9 +23,9 @@ void setup(){
 
 void draw(){
   for(int i=0; i<speed; i++){
-  stroke(t*100%255,255,255,vis);
-  xn = x*(1-sin(y+dt)*dt);
-  yn = y*(1+cos(x+dt)*dt);
+  stroke(t*100%255,255,200,vis);
+  //xn = x*(1-sin(y+dt)*dt);
+  //yn = y*(1+cos(x+dt)*dt);
   
   
   //xn = x + exp(-PI*sin((y-height/2)/height*PI));
@@ -37,8 +37,8 @@ void draw(){
   //xn = x - 10*exp(-sin(y/height*PI)*exp(sin(y/height*PI)))*y*0.0001*3;
   //yn = y + 10*exp(-sin(x/width*PI)*exp(cos(y/height*PI)))*x*0.0001;
   
-  //xn = x - f*sin(exp(y/height*PI))*x*dt*3;
-  //yn = y - f*cos(exp(x/width*PI+y/height*PI))*y*dt;
+  xn = x - f*sin(exp(y/height*PI))*x*dt*3;
+  yn = y - f*cos(exp(x/width*PI+y/height*PI))*y*dt;
   
   //xn = x - f*sin(exp(y/height*PI))*x*dt*3;
   //yn = y - f*cos(exp(x/width*PI))*y*dt;
