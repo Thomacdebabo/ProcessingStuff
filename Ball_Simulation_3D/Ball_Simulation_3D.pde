@@ -1,6 +1,6 @@
 int n=100;
 int initialV = 120;
-
+float t = 0;
 ball3d b[]= new ball3d[n];
 
 void setup(){
@@ -24,6 +24,7 @@ void draw(){
     b[i].drawball();
     b[i].update();
   } 
+  t+=0.01;
 }
 
 void Environment(){
@@ -32,6 +33,10 @@ void Environment(){
   pointLight(255,255,255,500, -500, 1000);
   translate(300, 500, -1200);
   rotateX(PI/4);
+  //rotate whole thingy
+  translate(500,500);
+  rotateZ(t);
+  translate(-500,-500);
   
   fill(255);
   rect(0,0,1000,1000);
@@ -39,6 +44,7 @@ void Environment(){
   rect(0,0,1000,1000);
   rotateY(PI/2);
   rect(0,0,1000,1000);
+  
   
 }
 void mouseClicked(){

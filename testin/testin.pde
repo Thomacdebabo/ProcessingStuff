@@ -23,7 +23,14 @@ void setup(){
 
 void draw(){
   for(int i=0; i<speed; i++){
+<<<<<<< HEAD
   stroke(t*100%255,255,200,vis);
+=======
+  stroke(t*100%255,255,255,vis);
+  xn = x+exp(sin(x/y));
+  yn = y+exp(sin(y/x));
+  
+>>>>>>> 4f9b0eacdf8eeb5311c1ebad49dae8a3a89be046
   //xn = x*(1-sin(y+dt)*dt);
   //yn = y*(1+cos(x+dt)*dt);
   
