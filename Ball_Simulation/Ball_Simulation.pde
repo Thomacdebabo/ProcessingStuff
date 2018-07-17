@@ -13,7 +13,7 @@ void setup(){
   //b[i]= new ball(random(width),random(height),random(200),random(300)); 
   b[i]= new ball(0,0,random(initialV),-random(initialV));
   b[i].size=5+ (int)random(20);
-  b[i].a= 5+ random(30);
+  b[i].a= 9.81;
   b[i].imp = 1.01+random(0.5);
  }
 
