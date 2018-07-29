@@ -28,12 +28,12 @@ class vectorfield{
    }
    
  }
-  void  drawvectorfield(int R, int G, int B){
+  void  drawvectorfield(float R, float G, float B, float a){
     for(int x = 0; x<2*nmax; x++){
        for(int y = 0; y<2*mmax; y++){
           for(int z = 0; z<2*lmax; z++){
             
-          V[x][y][z].drawvect((x-nmax)*padding,(y-mmax)*padding,(z-lmax)*padding,R,G,B);
+          V[x][y][z].drawvect((x-nmax)*padding,(y-mmax)*padding,(z-lmax)*padding,R,G,B,a);
           }
         }
       }

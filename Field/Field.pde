@@ -11,9 +11,9 @@ void setup() {
 void draw(){
   init();
   E.setDipole(1,10000,t);
-  E.drawvectorfield(1,1,1);
+  E.drawvectorfield(1,1,1,0.8);
   H.Hfield(1,10000,t);
-  H.drawvectorfield(1,0,0);
+  H.drawvectorfield(0.5,0,0,1.5);
 
 }
 
