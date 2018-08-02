@@ -69,5 +69,21 @@ class vectorfield{
    }
     
   }
-  
+  void Efield ( float k, float A,float  omega, float t){
+    t=0.01*t;
+         for(int x = -nmax; x<nmax; x++){
+         for(int y = -mmax; y<mmax; y++){
+          for(int z = -lmax; z<lmax; z++){
+            float c=-5;
+            float AA = A*exp(-(x*x+y*y)/omega/omega);
+            float im = cos(k*x)*sin(omega*t)+sin(k*x)*cos(omega*t);
+            float re = cos(k*z)*cos(omega*t)+sin(k*x)*sin(omega*t);
+            float Ex= (x*re-y*im)*AA;
+            float Ey = 0;
+            float Ez = AA*(re*2*x*y/k-im*(1/k-2*x*x/k));
+             V[x+nmax][y+mmax][z+lmax]= new vector(Ex,Ey,Ez);
+          }
+       }
+         }
+}
 }
