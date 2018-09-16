@@ -16,7 +16,7 @@ vector(float x0, float y0, float z0){
 
 void drawvect (int xl,int yl,int zl, float R, float G, float B, float a ) {
   stroke(v*2*R,v*2*G,v*2*B,v*a);
-  strokeWeight(1);
+  strokeWeight(v/100);
   
   line(xl,yl,zl,xl+x*l,yl+y*l,zl+z*l);
   
